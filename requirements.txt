@@ -1,3 +1,4 @@
 flask
-bcrypt
-flasgger
+flask-sqlalchemy
+psycopg2
+gunicorn
