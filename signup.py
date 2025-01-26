@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -26,4 +27,6 @@ def signup():
     return jsonify({"message": "User signed up successfully!", "user": user}), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the port from the environment or use default
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
